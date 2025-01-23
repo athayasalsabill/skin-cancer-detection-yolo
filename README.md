@@ -14,8 +14,8 @@ The [preprocessing tools](preprocessing tools) folder contains all the scripts u
 For deployment, I built a Flask app to serve as the UI for skin cancer detection. The deployment code is located in the [deploy](deploy) folder. To use it:
 
 1. Create a virtual environment.
-2. Install all dependencies listed in [requirements.txt](requirements.txt).
-3. Run the app.py.
+2. Install all dependencies listed in [requirements.txt](deploy/requirements.txt).
+3. Run the [app.py](deploy/app.py).
 
 ### Dataset Availability
 Unfortunately, I cannot upload the dataset I created due to size constraints. If you'd like access to it, feel free to contact me at athayasalsabil2002@gmail.com.
