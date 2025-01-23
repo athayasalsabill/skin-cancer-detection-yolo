@@ -1,0 +1,134 @@
+index.html code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skin Cancer Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    <style>
+        /* CSS yang sudah ada tetap sama */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            background-color: #f9e5f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #535353;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #535353;
+            text-align: center;
+            font-size: 15px;
+        }
+        .ribbon {
+            font-size: 1.5em;
+            color: #ff69b4;
+            margin: 0 10px;
+        }
+        .description {
+            font-size: 18px;
+            justify-content: center;
+            color: #535353;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        .form-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-container {
+            color: #535353;
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            width: 80%;
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #535353;
+            border-radius: 8px;
+        }
+        .button {
+            font-family: 'Playfair Display', serif;
+            display: block;
+            margin: 15px auto 0 auto;
+            padding: 10px 20px;
+            background-color: #febcdd;
+            color: rgb(53, 53, 53);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+        .button:hover{
+            background-color: #c995af;
+        }
+        /*media quaries untuk perangkat mobile*/
+        @media (max-width: 600px){
+            h1{
+                font-size: 28px;
+            }
+            p{
+                font-size: 15px;
+            }
+            .ribbon{
+                font-size: 1.2em;
+            }
+            .button{
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            img{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Skin Cancer Detection</h1>
+    </div>
+
+    <!-- Tambahkan deskripsi di sini -->
+    <div class="description">
+        <p>This is a deep learning model for detecting skin cancer. This model can detect nine types of skin 
+            lesions: Actinic Keratosis, Basal Cell Carcinoma, Dermatofibra, Melanoma, Melanocytic Nevus,
+            Pigmented Benign Keratosis, Serborrheic Keratosis, Squamous Cell Carcinoma, Vascular Lesion.</p>
+        <p>Disclaimer:</p>
+        <p>This model is a prototype for a college project and has not been approved by any regulatory agencies.</p>
+    </div>
+
+    <div class="form-container">
+        <!-- Opsi upload file -->
+        <form id="upload-form" action="/" method="post" enctype="multipart/form-data">
+            <input class="button" type="file" id="imagefile" name="imagefile">
+            <input class="button" type="submit" value="Predict Image">
+        </form>
+    </div>
+
+    <div class="result-container">
+        {% if output_image %}
+        <h2>Prediction Result:</h2>
+        <img src="{{ url_for('static', filename=output_image) }}" alt="Predicted Image">
+        <a class="button" href="{{ url_for('static', filename=output_image) }}" download>Save Image</a>
+        {% endif %}
+    </div>
+    <div class="description">
+        <p>Creator:</p>
+        <p>Athaya Salsabil (140910200025)</p>
+        <p>Universitas Padjadjaran</p>
+    </div>
+</body>
+</html>
