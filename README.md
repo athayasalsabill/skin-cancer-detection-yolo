@@ -10,10 +10,10 @@ Later, I decided to create my own dataset—well, more like assembling one. I do
 - Annotation Automation: For annotations, I utilized the previously trained 8-class model. I wrote a program to automatically infer the new dataset using the 8-class model and generate the label files. You can find the detailed code for this process in the file [anotassi.ipynb](anotassi.ipynb).
 The [preprocessing tools](preprocessing tools) folder contains all the scripts used for preprocessing tasks.
 
-### Model Training and Transfer Learning
+### Model Training/Transfer Learning
 The following Jupyter notebooks contain the training and transfer learning processes for the skin cancer detection model:
 
-- [19.ipynb](19.ipynb): This notebook includes the initial training/transer learning process of the model using the YOLO architecture to detect and classify nine skin lesions.
+- [19.ipynb](19.ipynb): This notebook includes the training/transer learning process of the model using the YOLO architecture to detect and classify nine skin lesions.
 
 - [28.ipynb](28.ipynb): also the transfer learning process but ten classes of skin lesions
 
